@@ -1,0 +1,17 @@
+.container{
+	display: flex;
+	flex-direction: column;
+	height: 600px;
+	width: 350px;
+	margin:0 auto;
+}
+.riddle{
+	display: block;
+	font-size: 25px;
+	background-color: yellow;
+	margin-top: 200px;
+	height: 180px;
+}
+.inputBox{
+	display: block;
+}

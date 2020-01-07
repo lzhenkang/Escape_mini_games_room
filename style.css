@@ -1,0 +1,99 @@
+.container{
+	display: flex;
+	flex-direction: column;
+	height: 600px;
+	width: 350px;
+	margin:0 auto;
+}
+.riddle{
+	display: block;
+	font-size: 25px;
+	background-color: yellow;
+	margin-top: 200px;
+	height: 180px;
+}
+.inputBox{
+	display: block;
+}
+
+.quizContainer{
+	height: 700px;
+	display: flex;
+	align-items: center;
+
+}
+.quizButtons{
+
+}
+
+.typingContainer{
+	display: flex;
+	flex-direction: column;
+	height: 600px;
+	width: 350px;
+	margin:0 auto;
+}
+.typingParagraph{
+	display: block;
+	font-size: 25px;
+	background-color: yellow;
+	margin-top: 200px;
+	height: 310px;
+}
+.typingInputBox{
+	display: block;
+}
+.mainContainer{
+	margin: 0 auto;
+	width: 50%
+}
+.inputBox{
+	width: 300px;
+}
+.typingInputBox{
+	width: 500px;
+}
+.quizButton{
+	width: 20px;
+	position: absolute;
+	margin:255px 0 0 763px;
+}
+.riddleButton{
+	width: 100px;
+	position: absolute;
+	margin: 580px 0 0 250px;
+}
+.typingButton{
+	width: 150px;
+	position: absolute;
+	margin:470px 0 0 590px;
+}
+.lockButton{
+	width: 10px;
+	position: absolute;
+	margin:420px 0 0 180px;
+}
+.buttonBackgroundContainer{
+	background-image: url(background.jpeg);
+	background-size: cover;
+	height: 650px;
+	width: 800px;
+}
+.quizButtons{
+	background: cyan;
+	position: absolute;
+	width: 300px;
+	margin: 100px 0 0 250px;
+	padding: 20px;
+}
+
+#quizQuestion{
+	height: 350px;
+	width: 300px;
+}
+.quizContainer{
+	background-image: url(boardSS.PNG);
+	background-size: cover;
+	height: 650px;
+	width: 800px;
+}
