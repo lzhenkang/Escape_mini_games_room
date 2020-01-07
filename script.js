@@ -238,15 +238,21 @@ var riddleGameBoard = function(){
     exitButton.textContent = "Close"
     mainContainer.appendChild(exitButton)
 
+//create riddle container
+var riddleContainer = document.createElement("div")
+riddleContainer.classList.add("riddleContainer")
+mainContainer.appendChild(riddleContainer)
+
 //code for Exit Button
 var closeButton = function(){
-    var riddleContainer = document.querySelector(".mainContainer")
-    var riddle = document.querySelector(".riddle")
-    var riddleAnswer = document.querySelector(".riddleAnswer")
-    var inputBox = document.querySelector(".inputBox")
-    riddleContainer.removeChild(riddle)
-    riddleContainer.removeChild(riddleAnswer)
-    riddleContainer.removeChild(inputBox)
+    // var riddleContainer = document.querySelector(".mainContainer")
+    // var riddle = document.querySelector(".riddle")
+    // var riddleAnswer = document.querySelector(".riddleAnswer")
+    // var inputBox = document.querySelector(".inputBox")
+    // riddleContainer.removeChild(riddle)
+    // riddleContainer.removeChild(riddleAnswer)
+    // riddleContainer.removeChild(inputBox)
+    mainContainer.removeChild(riddleContainer)
 //create game buttons
 createGameButtons()
 
@@ -260,7 +266,7 @@ document.querySelector(".exitButton").addEventListener("click", closeButton)
     var riddleText = document.createElement("div")
     riddleText.classList.add("riddle")
     riddleText.innerHTML = "Freeing me can bring both war and strife,<br> I am there at the beginning of life,<br>I am the symbol of kin,<br> and the pathway of kings.<br> Present me, and pass."
-    var riddleContainer = document.querySelector(".mainContainer")
+    var riddleContainer = document.querySelector(".riddleContainer")
     riddleContainer.appendChild(riddleText)
 //create div for the text "riddle answer"
     var riddleAnswer = document.createElement("div")
