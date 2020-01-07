@@ -41,9 +41,8 @@ var createGameButtons = function(){
 //function to create game option buttons
 var mainGameStart = function(){
     //remove Start Game Button
-    var startGameButton = document.querySelector(".startButton")
-    var mainContainer = document.querySelector(".mainContainer")
-    mainContainer.removeChild(startGameButton)
+    var startButton = document.querySelector(".startButton")
+    mainContainer.removeChild(startButton)
     // remove instructions div
     var mainInstruction = document.querySelector(".mainInstruction")
     mainContainer.removeChild(mainInstruction)
@@ -81,22 +80,13 @@ function checkSecond(sec) {
 createGameButtons()
 }
 document.querySelector(".startButton").addEventListener("click", mainGameStart)
-//function to create the quiz game board
-var quizGameBoard = function(){
-    var buttonBackgroundContainer = document.querySelector(".buttonBackgroundContainer")
-    mainContainer.removeChild(buttonBackgroundContainer)
-
-    //create exit button
-    var exitButton = document.createElement("button")
-    exitButton.classList.add("exitButton")
-    exitButton.textContent = "Close"
-    mainContainer.appendChild(exitButton)
 
 //code for Exit Button
 var closeButton = function(){
-    var quizContainer = document.querySelector(".mainContainer")
-    var quizButtons = document.querySelector(".quizButtons")
-    quizContainer.removeChild(quizButtons)
+    var mainContainer = document.querySelector(".mainContainer")
+    var quizContainer = document.querySelector(".quizContainer")
+    mainContainer.removeChild(quizContainer)
+    questionNumber = 0;
 
 //create game buttons
     createGameButtons()
@@ -105,27 +95,39 @@ var closeButton = function(){
     var exitButton = document.querySelector(".exitButton")
     mainContainer.removeChild(exitButton)
 }
-document.querySelector(".exitButton").addEventListener("click", closeButton)
 
-//
+//function to create the quiz game board
+var quizGameBoard = function(){
+    var buttonBackgroundContainer = document.querySelector(".buttonBackgroundContainer")
+    var mainContainer = document.querySelector(".mainContainer")
+    mainContainer.removeChild(buttonBackgroundContainer)
 
+    //create exit button
+    var exitButton = document.createElement("button")
+    exitButton.classList.add("exitButton")
+    exitButton.textContent = "Close"
+    mainContainer.appendChild(exitButton)
+    document.querySelector(".exitButton").addEventListener("click", closeButton)
+//create div for quiz container
+    var quizContainer = document.createElement("div")
+    quizContainer.classList.add("quizContainer")
+    mainContainer.appendChild(quizContainer)
 //created div for quiz buttons
     var quizButtons = document.createElement("div")
     quizButtons.classList.add("quizButtons")
-    var quizContainer = document.querySelector(".mainContainer")
+    var mainContainer = document.querySelector(".mainContainer")
     quizContainer.appendChild(quizButtons);
 
 //create div for "press any button to begin"
     var quizInstructions = document.createElement("div")
-    // quizInstructions.classList.add("col-4 offset-4")
-    quizInstructions.setAttribute("id", "quizQuestion")
+    quizInstructions.classList.add("quizQuestion")
+    // quizInstructions.setAttribute("id", "quizQuestion")
     quizInstructions.textContent = "Click on any button below to begin."
     quizButtons.appendChild(quizInstructions)
 
     //create div for containing buttons
     var quizButtonContainer = document.createElement("div")
     quizButtonContainer.classList.add("quizButtonContainer")
-    // quizButtonContainer.classList.add("quizButtons col-4 offset-4")
     quizButtonContainer.textContent = "Answer: "
     quizButtons.appendChild(quizButtonContainer)
 
@@ -200,15 +202,15 @@ var questionNumber = 0
 
 function quizStart(){
     if(questionNumber === 0){
-    document.getElementById("quizQuestion").innerHTML = "Question 1) What is 1 + 1?<br><br> A) 2 <br> B) 3 <br> C) 4 <br> D) 5";
+    document.querySelector(".quizQuestion").innerHTML = "Question 1) What is 1 + 1?<br><br> A) 2 <br> B) 3 <br> C) 4 <br> D) 5";
     return questionNumber = 1
     }
     if(questionNumber === 1 && quizOption1 === true){
-        document.getElementById("quizQuestion").innerHTML = "Question 2) What is 2 + 2?<br><br> A) 3 <br> B) 4 <br> C) 5 <br> D) 6";
+        document.querySelector(".quizQuestion").innerHTML = "Question 2) What is 2 + 2?<br><br> A) 3 <br> B) 4 <br> C) 5 <br> D) 6";
     return questionNumber = 2
     }
     if(questionNumber === 2 && quizOption2 === true){
-        document.getElementById("quizQuestion").innerHTML = "Question 3) What is 1234124 + 12314124<br><br> A) 7 <br> B) 8 <br> C) 13548248 <br> D) 9";
+        document.querySelector(".quizQuestion").innerHTML = "Question 3) What is 1234124 + 12314124<br><br> A) 7 <br> B) 8 <br> C) 13548248 <br> D) 9";
     return questionNumber = 3
 
     }
@@ -216,11 +218,12 @@ function quizStart(){
         var quizButtons = document.querySelector(".quizButtons")
         var quizButtonContainer = document.querySelector(".quizButtonContainer")
         quizButtons.removeChild(quizButtonContainer)
-        return document.getElementById("quizQuestion").innerHTML = "Congratulations! You got it all correct!<br> The clue is the number '1'.";
+        questionNumber = 0;
+        return document.querySelector(".quizQuestion").innerHTML = "Congratulations! You got it all correct!<br> The clue is the number '1'.";
     }
     else{
         questionNumber = 0
-        return document.getElementById("quizQuestion").innerHTML = "Wrong Answer, try again";
+        return document.querySelector(".quizQuestion").innerHTML = "Wrong Answer, try again";
     }
 }
 
