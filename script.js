@@ -656,6 +656,9 @@ var lockValueChecker = function(){
         var exitButton = document.querySelector(".exitButton")
         mainContainer.removeChild(mainTimerText)
         mainContainer.removeChild(exitButton)
+        var lockContainer = document.querySelector(".lockContainer")
+        var submitButton = document.querySelector(".submitButton")
+        lockContainer.removeChild(submitButton)
         document.querySelector(".lockDisplay").innerHTML = "You managed to escape!"
     }else{
         console.log("work")
