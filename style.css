@@ -102,3 +102,47 @@
 	color: white;
 	width: 1px;
 }
+.lockContainer{
+	background-image: url(boardSS.PNG);
+	background-size: cover;
+	height: 650px;
+	width: 800px;
+}
+.lockInstructions{
+	position: absolute;
+	background: cyan;
+	width: 230px;
+	margin: 300px 0 0 285px;
+}
+.lock1{
+	position: absolute;
+	margin: 325px 0 0 285px;
+	width: 50px;
+	height: 30px;
+}
+.lock2{
+	position: absolute;
+	margin: 325px 0 0 335px;
+	width: 50px;
+	height: 30px;
+}
+.lock3{
+	position: absolute;
+	margin: 325px 0 0 385px;
+	width: 50px;
+	height: 30px;
+}
+.submitButton{
+	position: absolute;
+	margin: 325px 0 0 435px;
+	height: 30px;
+	width: 80px;
+	text-align: center;
+}
+.lockDisplay{
+	background: cyan;
+	position: absolute;
+	margin: 355px 0 0 285px;
+	width: 230px;
+	height: 30px;
+}
