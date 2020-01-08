@@ -92,6 +92,8 @@
 	background-size: cover;
 	height: 650px;
 	width: 800px;
+/*	position: absolute;
+	margin: 30px 0 0 0px;*/
 }
 .lockInstructions{
 	position: absolute;
@@ -156,4 +158,41 @@
 	margin: 400px 0 0 250px;
 	width: 300px;
 	height: 30px;
+}
+.typingContainer{
+	background-image: url(boardSS.PNG);
+	background-size: cover;
+	height: 650px;
+	width: 800px;
+	  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+.typingParagraph{
+	background: cyan;
+	position: absolute;
+	margin: 145px 0 0 200px;
+	width: 400px;
+	height: 300px;
+}
+.typingAnswerText{
+	background: cyan;
+	position: absolute;
+	margin: 445px 0 0 200px;
+	width: 400px;
+	height: 30px;
+}
+.typingInputBox{
+	background: white;
+	position: absolute;
+	margin: 475px 0 0 200px;
+	width: 400px;
+	height: 30px;
+}
+.buttonBackgroundContainer{
+	position: absolute;
+	margin: 30px 0 0 0px;
 }

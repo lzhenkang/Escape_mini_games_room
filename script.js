@@ -202,19 +202,19 @@ var questionNumber = 0
 
 function quizStart(){
     if(questionNumber === 0){
-    document.querySelector(".quizQuestion").innerHTML = "Question 1) What is 1 + 1?<br><br> A) 2 <br> B) 3 <br> C) 4 <br> D) 5";
+    document.querySelector(".quizQuestion").innerHTML = "Question 1) Which of the options are pokemon games?<br><br> A) Brown & Gray <br> B) Super Red & Power Blue<br>C) Ultra Sun & Ultra Moon <br> D) Spear & Gun";
     return questionNumber = 1
     }
-    if(questionNumber === 1 && quizOption1 === true){
-        document.querySelector(".quizQuestion").innerHTML = "Question 2) What is 2 + 2?<br><br> A) 3 <br> B) 4 <br> C) 5 <br> D) 6";
+    if(questionNumber === 1 && quizOption3 === true){
+        document.querySelector(".quizQuestion").innerHTML = "Question 2) Luke Skywalker is a character in which film series? <br><br> A) Moon Fight <br> B) Star Wars <br> C) Sun Battles <br> D) Fight Club";
     return questionNumber = 2
     }
     if(questionNumber === 2 && quizOption2 === true){
-        document.querySelector(".quizQuestion").innerHTML = "Question 3) What is 1234124 + 12314124<br><br> A) 7 <br> B) 8 <br> C) 13548248 <br> D) 9";
+        document.querySelector(".quizQuestion").innerHTML = "Question 3) What is the mass of the sun?<br><br> A) 1.9891 x 10^30 Grams <br> B) 3000000 Elephants <br> C) Same as your mom <br> D) 1.9891 x 10^30 kilograms";
     return questionNumber = 3
 
     }
-    if(questionNumber === 3 && quizOption3 === true){
+    if(questionNumber === 3 && quizOption4 === true){
         var quizButtons = document.querySelector(".quizButtons")
         var quizButtonContainer = document.querySelector(".quizButtonContainer")
         quizButtons.removeChild(quizButtonContainer)
@@ -299,7 +299,7 @@ var answer = function(){
 var answerChecker = function(){
     if(answerEntered.toUpperCase() === "blood".toUpperCase()){
         console.log("correct answer")
-        document.querySelector('.inputBox').value = "Correct Answer! The Clue is '2'"
+        document.querySelector('.inputBox').value = "Correct Answer! The Clue is '6'"
     }else {
         console.log("try again")
         document.querySelector('.inputBox').value = ""
@@ -331,13 +331,14 @@ var typingCreateBoard = function(){
 //code for Exit Button
 var closeButton = function(){
 //remove everything in main container
-    var typingContainer = document.querySelector(".mainContainer")
-    var typingParagraph = document.querySelector(".typingParagraph")
-    var typingAnswerText = document.querySelector(".typingAnswerText")
-    var typingInputBox = document.querySelector(".typingInputBox")
-    typingContainer.removeChild(typingParagraph)
-    typingContainer.removeChild(typingAnswerText)
-    typingContainer.removeChild(typingInputBox)
+mainContainer.removeChild(typingContainer)
+    // var typingContainer = document.querySelector(".mainContainer")
+    // var typingParagraph = document.querySelector(".typingParagraph")
+    // var typingAnswerText = document.querySelector(".typingAnswerText")
+    // var typingInputBox = document.querySelector(".typingInputBox")
+    // typingContainer.removeChild(typingParagraph)
+    // typingContainer.removeChild(typingAnswerText)
+    // typingContainer.removeChild(typingInputBox)
 
 //create game buttons
 createGameButtons()
@@ -347,12 +348,15 @@ createGameButtons()
     mainContainer.removeChild(exitButton)
 }
 document.querySelector(".exitButton").addEventListener("click", closeButton)
-
+//create div for typing container
+var typingContainer = document.createElement("div")
+typingContainer.classList.add("typingContainer")
+mainContainer.appendChild(typingContainer)
 //creating the div for the text paragraph
     var typingParagraph = document.createElement("div");
     typingParagraph.classList.add("typingParagraph")
     typingParagraph.innerHTML = "I made myself a snowball<br>As perfect as could be.<br>I thought I'd keep it as a pet<br>And let it sleep with me.<br>I made it some pajamas<br>And a pillow for its head.<br>Then last night it ran away,<br>But first it wet the bed."
-    var typingContainer = document.querySelector(".mainContainer")
+    var typingContainer = document.querySelector(".typingContainer")
     typingContainer.appendChild(typingParagraph)
 //create a div for "Answer:" text
     var typingAnswerText = document.createElement("div")
@@ -378,7 +382,7 @@ var typingAnswer = function(){
 // checks if answer is correct in input box regardless of the case it is inputted in
 var typingAnswerChecker = function(){
     if(typingAnswerEntered.toUpperCase() === "I made myself a snowball As perfect as could be. I thought I'd keep it as a pet And let it sleep with me. I made it some pajamas And a pillow for its head. Then last night it ran away, But first it wet the bed.".toUpperCase()){
-        document.querySelector('.typingInputBox').value = "Correct Answer! The Clue is '3'"
+        document.querySelector('.typingInputBox').value = "Correct Answer! The Clue is '9'"
     }else {
         document.querySelector('.typingInputBox').value = ""
     }
@@ -651,7 +655,7 @@ var lockNumber3 = function(){
 
 //function to check if the values entered are correct
 var lockValueChecker = function(){
-    if(lock1Value == 1 && lock2Value == 2 && lock3Value == 3){
+    if(lock1Value == 6 && lock2Value == 1 && lock3Value == 9){
         console.log("work")
         //stop timeout
         stopTimerFunction()
