@@ -210,7 +210,7 @@ function quizStart(){
     return questionNumber = 2
     }
     if(questionNumber === 2 && quizOption2 === true){
-        document.querySelector(".quizQuestion").innerHTML = "Question 3) What is the mass of the sun?<br><br> A) 1.9891 x 10^30 Grams <br> B) 3000000 Elephants <br> C) Same as your mom <br> D) 1.9891 x 10^30 kilograms";
+        document.querySelector(".quizQuestion").innerHTML = "Question 3) What is the mass of the sun?<br><br> A) 1.9891 x 10^30 Grams <br> B) 3000000 Elephants <br> C) 5 kilograms <br> D) 1.9891 x 10^30 kilograms";
     return questionNumber = 3
 
     }
